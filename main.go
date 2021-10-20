@@ -10,4 +10,3 @@ func main() {
 	config.New()
 	api.InitRouter(application.Get().Config.Port)
 }
-
