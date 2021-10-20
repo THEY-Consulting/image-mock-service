@@ -49,6 +49,14 @@ func setupRoutes(r chi.Router) {
 			return
 		}
 	})
+
+	r.Get("/health", func(w http.ResponseWriter, r *http.Request) {
+		_, err := w.Write([]byte("I am okay."))
+		if err != nil {
+			http.Error(w, err.Error(), http.StatusBadRequest)
+			return
+		}
+	})
 }
 
 func writeImage(w http.ResponseWriter) (int, error) {
