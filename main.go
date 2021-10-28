@@ -1,9 +1,9 @@
 package main
 
 import (
-	"github.com/they-consulting/gogogo/api"
-	"github.com/they-consulting/gogogo/application"
-	"github.com/they-consulting/gogogo/config"
+	"github.com/they-consulting/image-mock-service/api"
+	"github.com/they-consulting/image-mock-service/application"
+	"github.com/they-consulting/image-mock-service/config"
 )
 
 func main() {

@@ -6,7 +6,7 @@ import (
 	"github.com/go-chi/chi/v5/middleware"
 	"github.com/go-chi/cors"
 	"github.com/go-chi/render"
-	"github.com/they-consulting/gogogo/console"
+	"github.com/they-consulting/image-mock-service/console"
 	"image"
 	"image/jpeg"
 	"log"

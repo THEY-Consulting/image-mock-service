@@ -1,4 +1,4 @@
-module github.com/they-consulting/gogogo
+module github.com/they-consulting/image-mock-service
 
 go 1.16
 

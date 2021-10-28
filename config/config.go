@@ -2,8 +2,8 @@ package config
 
 import (
 	"github.com/joho/godotenv"
-	"github.com/they-consulting/gogogo/console"
-	"github.com/they-consulting/gogogo/helpers"
+	"github.com/they-consulting/image-mock-service/console"
+	"github.com/they-consulting/image-mock-service/helpers"
 	"os"
 )
 

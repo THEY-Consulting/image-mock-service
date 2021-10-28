@@ -1,7 +1,7 @@
 package application
 
 import (
-	"github.com/they-consulting/gogogo/config"
+	"github.com/they-consulting/image-mock-service/config"
 )
 
 type Application struct {
