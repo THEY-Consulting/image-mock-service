@@ -2,6 +2,7 @@ package api
 
 import (
 	"bytes"
+	"fmt"
 	"github.com/go-chi/chi/v5"
 	"github.com/go-chi/chi/v5/middleware"
 	"github.com/go-chi/cors"
@@ -43,7 +44,7 @@ func setupRoutes(r chi.Router) {
 	r.Use(render.SetContentType(render.ContentTypeJSON))
 
 	r.Get("/", func(w http.ResponseWriter, r *http.Request) {
-		_, err := writeImage(w)
+		_, err := writeImage(w, "image")
 		if err != nil {
 			http.Error(w, err.Error(), http.StatusBadRequest)
 			return
@@ -57,10 +58,19 @@ func setupRoutes(r chi.Router) {
 			return
 		}
 	})
+
+	r.Get("/{image:[a-z0-9-]+}/", func(w http.ResponseWriter, r *http.Request) {
+		i := chi.URLParam(r, "image")
+		_, err := writeImage(w, i)
+		if err != nil {
+			http.Error(w, err.Error(), http.StatusBadRequest)
+			return
+		}
+	})
 }
 
-func writeImage(w http.ResponseWriter) (int, error) {
-	file, err := os.Open("./data/image.jpg")
+func writeImage(w http.ResponseWriter, i string) (int, error) {
+	file, err := os.Open(fmt.Sprintf("./data/%s.jpg", i))
 	if err != nil {
 		http.Error(w, err. Error(), http.StatusUnprocessableEntity)
 	}
